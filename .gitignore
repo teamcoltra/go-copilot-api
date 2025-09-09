@@ -1,0 +1,30 @@
+# Build output
+/bin/
+*.exe
+*.test
+*.out
+
+# Editor/project files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+*.tmp
+*.DS_Store
+*.log
+
+# Test/coverage output
+*.coverprofile
+*.testresult
+*.prof
+*.cov
+
+# Environment files
+.env
+.env.*
+
+# Copilot config and tokens (if copied into repo)
+*token.json
+*apps.json
+*hosts.json
