@@ -1,3 +1,5 @@
+![Copilot OpenAI API](assets/header.png)
+
 # 🤖 Copilot OpenAI API (Go Edition)
 
 **License:** See [LICENSE](LICENSE) — YO LICENSE, Version 1.0, February 2025  
@@ -64,8 +66,7 @@ Set up environment variables (or use a `.env` file):
 |---------------------------|-----------------------------------------------------|------------------------|
 | `COPILOT_TOKEN`           | Required. API access token for authentication.      | Randomly generated     |
 | `COPILOT_OAUTH_TOKEN`     | Copilot OAuth token (auto-detected if not set)      | (auto)                 |
-| `COPILOT_SERVER_PORT`     | Port to listen on (overrides SERVER_ADDR)           | `9191`                 |
-| `SERVER_ADDR`             | Address to listen on (used if COPILOT_SERVER_PORT unset) | `:8080`           |
+| `COPILOT_SERVER_PORT`     | Port to listen on (e.g. `8080` for `:8080`)         | `9191`                 |
 | `CORS_ALLOWED_ORIGINS`    | Comma-separated list of allowed CORS origins        | `*`                    |
 | `DEBUG`                   | Enable debug logging                                | `false`                |
 | `DEFAULT_MODEL`           | Default model to use if not specified in request    | *(none)*               |
@@ -94,19 +95,7 @@ bin/go-copilot-api
 
 ---
 
-## 🐳 Docker Run
 
-Build and run with Docker:
-```bash
-docker build -t copilot-openai-api-go .
-docker run --rm -p 9191:9191 \
-    -v ~/.config/github-copilot:/home/appuser/.config/github-copilot \
-    -e COPILOT_TOKEN=your_access_token_here \
-    copilot-openai-api-go
-```
-- On Windows, use `%LOCALAPPDATA%/github-copilot` for the volume mount.
-
----
 
 ## 🔄 Making API Requests
 
@@ -165,7 +154,7 @@ You can set a default model for all requests by adding to your `.env` or environ
 DEFAULT_MODEL=gpt-5-mini
 ```
 
-- If a client request does **not** specify a `"model"` field, this value will be used automatically for `/v1/chat/completions`, `/v1/embeddings`, and `/v1/messages`.
+If a client request does **not** specify a `"model"` field, this value will be used automatically for `/v1/chat/completions`, `/v1/embeddings`, and `/v1/messages`.
 - If `DEFAULT_MODEL` is **not set**, and the client omits `"model"`, **no model is sent** to Copilot (Copilot will auto-select).
 - If the client provides a `"model"`, that value is always used as-is.
 
@@ -195,6 +184,8 @@ COPILOT_SERVER_PORT=9191
 - **Headers:** `Authorization: Bearer <your_access_token>`, `Content-Type: application/json`
 - **Body:** Anthropic-compatible. You may include `"model"` (see `/v1/models`). If omitted and `DEFAULT_MODEL` is set, it will be injected.
 - **Response:** Anthropic API-compatible response.
+
+> **Note:** Claude Code/Anthropic compatibility is currently untested. If you use Claude Code or Anthropic clients and encounter issues, we would appreciate any PRs or feedback to help improve support!
 
 ### GET /v1/models
 - Returns a list of available models and their capabilities.
