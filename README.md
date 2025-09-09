@@ -2,16 +2,13 @@
 
 # 🤖 Copilot OpenAI API (Go Edition)
 
-**License:** See [LICENSE](LICENSE) — YO LICENSE, Version 1.0, February 2025  
-Copyright (C) 2025 Travis Peacock
-
-
 [![Go 1.21+](https://img.shields.io/badge/go-1.21+-blue.svg)](https://golang.org/dl/)
 [![Docker](https://img.shields.io/badge/docker-ready-blue.svg)](https://www.docker.com/)
-[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
+[![License](https://img.shields.io/badge/license-Yo%201.0-blue.svg)](LICENSE)
 
 A high-performance Go proxy server that turns GitHub Copilot's chat completion/embeddings capabilities into an OpenAI-compatible API service, with Anthropic compatibility and robust security.
 
+I wouldn't call this a "fork" but I would say it's heavily inspired by [copilot-openai-api](https://github.com/yuchanns/copilot-openai-api). If you want to use Python instead of Go then you should check out that project.
 
 ## ✨ Key Features
 
@@ -258,6 +255,5 @@ go test ./...
 
 ## 📄 License
 
-Licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
-
----
+See [LICENSE](LICENSE) — YO LICENSE, Version 1.0, February 2025
+Copyright (C) 2025 Travis Peacock
